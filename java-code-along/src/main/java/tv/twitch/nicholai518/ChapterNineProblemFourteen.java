@@ -20,7 +20,7 @@ public class ChapterNineProblemFourteen {
     public String splitSentence(String sentence) {
         var accumulator = new StringBuilder();
         for (char c : sentence.toCharArray()) {
-            if (Character.isUpperCase(c) && accumulator.length() == 0) {
+            if (accumulator.length() == 0) {
                 accumulator.append(Character.toUpperCase(c));
             } else if (Character.isUpperCase(c) && accumulator.length() > 0) {
                 accumulator.append(" ").append(Character.toLowerCase(c));
