@@ -1,1 +1,3 @@
 This is a collection of code snippets and challenges built up while working alongside various people to better one another's abilities via code reviews, feedback, sharing solutions, etc... It is probably of little interest to most people.
+
+It should also be noted the best solution for any given problem might not have been choosen simply to demonstrate alternative approaches, limitations, time constraints, generate discussion, etc...
