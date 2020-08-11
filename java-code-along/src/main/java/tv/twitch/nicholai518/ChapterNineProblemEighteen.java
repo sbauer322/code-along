@@ -65,6 +65,7 @@ public class ChapterNineProblemEighteen {
     private Map<Integer, List<DatePricePair>> groupByYearAndMonth(List<DatePricePair> allDatePricePairs) {
         Map<Integer, List<DatePricePair>> byYears = new HashMap<>();
         for (DatePricePair datePricePair : allDatePricePairs) {
+            // bad practice trick as i'm being lazy
             int yearMonth = datePricePair.getDate().getYear() * 100 + datePricePair.getDate().getMonthValue();
             byYears.computeIfAbsent(yearMonth, integer -> new ArrayList<>());
             byYears.computeIfPresent(yearMonth, (integer, datePricePairs) -> {
@@ -90,6 +91,7 @@ public class ChapterNineProblemEighteen {
         byYearAndMonth.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEachOrdered(entry -> {
             Double sum = entry.getValue().stream().map(DatePricePair::getPrice).reduce(0.0, Double::sum);
             double average = sum / entry.getValue().size();
+            // undoing the trick from earlier
             int year = entry.getKey() / 100;
             int month = entry.getKey() % 100;
             System.out.println(year + " " + month + " : " + String.format("%.2f", average));
